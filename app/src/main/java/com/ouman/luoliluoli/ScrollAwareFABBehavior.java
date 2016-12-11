@@ -1,4 +1,4 @@
-package com.ouman.mordennews;
+package com.ouman.luoliluoli;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;

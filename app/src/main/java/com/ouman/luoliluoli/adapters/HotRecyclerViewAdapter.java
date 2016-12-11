@@ -1,4 +1,4 @@
-package com.ouman.mordennews.adapters;
+package com.ouman.luoliluoli.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,12 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.ouman.mordennews.MainActivity;
-import com.ouman.mordennews.NewsDetailActivity;
-import com.ouman.mordennews.R;
-import com.ouman.mordennews.models.HotNewsModel;
+import com.ouman.luoliluoli.NewsDetailActivity;
+import com.ouman.luoliluoli.R;
+import com.ouman.luoliluoli.models.HotNewsModel;
 
 import java.util.List;
 

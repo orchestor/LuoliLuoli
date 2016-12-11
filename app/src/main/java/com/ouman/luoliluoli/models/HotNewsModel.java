@@ -1,4 +1,4 @@
-package com.ouman.mordennews.models;
+package com.ouman.luoliluoli.models;
 
 /**
  * Created by GeekSpace on 2016/12/7.

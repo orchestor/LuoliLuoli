@@ -1,4 +1,4 @@
-package com.ouman.mordennews;
+package com.ouman.luoliluoli;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,12 +8,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -21,16 +19,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.ouman.mordennews.adapters.HotRecyclerViewAdapter;
-import com.ouman.mordennews.models.HotNewsModel;
+import com.ouman.luoliluoli.adapters.HotRecyclerViewAdapter;
+import com.ouman.luoliluoli.models.HotNewsModel;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.logging.LogRecord;
 
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;

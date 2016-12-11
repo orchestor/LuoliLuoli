@@ -1,4 +1,4 @@
-package com.ouman.mordennews;
+package com.ouman.luoliluoli;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.ouman.mordennews", appContext.getPackageName());
+        assertEquals("com.ouman.luoliluoli", appContext.getPackageName());
     }
 }

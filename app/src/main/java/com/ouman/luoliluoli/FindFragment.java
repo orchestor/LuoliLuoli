@@ -1,4 +1,4 @@
-package com.ouman.mordennews;
+package com.ouman.luoliluoli;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,12 +13,12 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link TechFragment.OnFragmentInteractionListener} interface
+ * {@link FindFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link TechFragment#newInstance} factory method to
+ * Use the {@link FindFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TechFragment extends Fragment {
+public class FindFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +30,7 @@ public class TechFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public TechFragment() {
+    public FindFragment() {
         // Required empty public constructor
     }
 
@@ -40,11 +40,11 @@ public class TechFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment TechFragment.
+     * @return A new instance of fragment FindFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static TechFragment newInstance(String param1, String param2) {
-        TechFragment fragment = new TechFragment();
+    public static FindFragment newInstance(String param1, String param2) {
+        FindFragment fragment = new FindFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,8 +64,8 @@ public class TechFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("科技");
-        return inflater.inflate(R.layout.fragment_tech, container, false);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("发现");
+        return inflater.inflate(R.layout.fragment_find, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
