@@ -19,8 +19,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, HotFragment.OnFragmentInteractionListener, TechFragment.OnFragmentInteractionListener ,
-FindFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, HotFragment.OnFragmentInteractionListener, ArticleFragment.OnFragmentInteractionListener ,
+SearchFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ FindFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteraction
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_news_detail);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("最热");
+        getSupportActionBar().setTitle("Hot");
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HotFragment()).commit();
         }
@@ -109,10 +109,10 @@ FindFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteraction
                     new HotFragment()).commit();
         } else if (id == R.id.nav_tech) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new TechFragment()).commit();
+                    new ArticleFragment()).commit();
         } else if (id == R.id.nav_find) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new FindFragment()).commit();
+                    new SearchFragment()).commit();
         } else if (id == R.id.nav_around) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new AroundFragment()).commit();

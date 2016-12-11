@@ -62,7 +62,7 @@ public class HotFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("最热");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Hot");
         View rootView = inflater.inflate(R.layout.fragment_hot, container, false);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.hot_recyclerview);
         return rootView;
