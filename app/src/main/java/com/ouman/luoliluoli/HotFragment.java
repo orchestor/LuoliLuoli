@@ -62,7 +62,7 @@ public class HotFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Hot");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("最热");
         View rootView = inflater.inflate(R.layout.fragment_hot, container, false);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.hot_recyclerview);
         return rootView;
@@ -81,7 +81,7 @@ public class HotFragment extends Fragment {
         //add swipe refresh on recycler view
         swipeRefreshLayout = (SwipeRefreshLayout) getActivity().findViewById(R.id.swipeLayout_hot_recylcerview);
         swipeRefreshLayout.setSize(SwipeRefreshLayout.DEFAULT);
-        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_green_dark, android.R.color.holo_red_light,
+        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_orange_light, android.R.color.holo_red_light,
                 android.R.color.holo_blue_light, android.R.color.holo_purple);
         swipeRefreshLayout.setProgressViewEndTarget(true, 200);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

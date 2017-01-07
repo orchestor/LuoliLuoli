@@ -12,17 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import io.github.yavski.fabspeeddial.FabSpeedDial;
 
 
 public class AroundFragment extends Fragment{
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -32,10 +25,7 @@ public class AroundFragment extends Fragment{
 
     public static AroundFragment newInstance(String param1, String param2) {
         AroundFragment fragment = new AroundFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -43,10 +33,7 @@ public class AroundFragment extends Fragment{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
@@ -55,7 +42,12 @@ public class AroundFragment extends Fragment{
         //如果要在fragment中重新设置toolbar的menu，就得加上这行代码
         setHasOptionsMenu(true);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("周边");
-        return inflater.inflate(R.layout.fragment_around, container, false);
+        View view = inflater.inflate(R.layout.fragment_around, container, false);
+
+        //get father activity floating button set it too invisible
+        //((MainActivity) getActivity()).hideFabMain();
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

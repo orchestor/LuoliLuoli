@@ -9,8 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.getbase.floatingactionbutton.FloatingActionButton;
-import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 
 public class SearchFragment extends Fragment {
@@ -34,8 +32,8 @@ public class SearchFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         //do not show fab in this fragment
-        FloatingActionsMenu floatingActionButton = (FloatingActionsMenu) getActivity().findViewById(R.id.fab_menu);
-        floatingActionButton.setVisibility(View.INVISIBLE);
+//        FloatingActionsMenu floatingActionButton = (FloatingActionsMenu) getActivity().findViewById(R.id.fab_menu);
+//        floatingActionButton.setVisibility(View.INVISIBLE);
     }
 
     @Override

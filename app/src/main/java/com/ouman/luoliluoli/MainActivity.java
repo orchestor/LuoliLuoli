@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.view.View;
@@ -18,10 +20,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import io.github.yavski.fabspeeddial.FabSpeedDial;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, HotFragment.OnFragmentInteractionListener, ArticleFragment.OnFragmentInteractionListener ,
 SearchFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteractionListener{
 
+    FabSpeedDial mainFab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +35,23 @@ SearchFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteracti
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_news_detail);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Hot");
+        getSupportActionBar().setElevation(6);
+
+
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.main_appbar_layout);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            appBarLayout.setElevation(8);
+        }
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HotFragment()).commit();
         }
 
+        //get the fab in main
+        FabSpeedDial mainFab = (FabSpeedDial) findViewById(R.id.fab_main);
+        if (mainFab == null){
+            System.out.println("If main fab is null, this will show.");
+        }
 
         //实现drawer布局
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -105,12 +123,16 @@ SearchFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteracti
         int id = item.getItemId();
 
         if (id == R.id.nav_hot) {
+
+
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new HotFragment()).commit();
         } else if (id == R.id.nav_tech) {
+
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new ArticleFragment()).commit();
         } else if (id == R.id.nav_find) {
+
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new SearchFragment()).commit();
         } else if (id == R.id.nav_around) {
@@ -136,5 +158,18 @@ SearchFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteracti
     //实现fragment监听方法
     public void onFragmentInteraction(Uri uri){
 
+    }
+
+    //implement a method let other fragment get fab in this activity
+    public FabSpeedDial getMainFab(){
+        System.out.println("Return main fab.");
+        return mainFab;
+    }
+
+    public void showFabMain(){
+        mainFab.show();
+    }
+    public void hideFabMain(){
+        mainFab.hide();
     }
 }
