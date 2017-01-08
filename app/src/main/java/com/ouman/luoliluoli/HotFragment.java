@@ -174,11 +174,12 @@ public class HotFragment extends Fragment {
                             try {
                                 JSONObject dataObject = jArray.getJSONObject(i);
                                 String title = dataObject.getString("title");
-                                String imageUrl = dataObject.getString("images");
+                                JSONArray imageUrls = dataObject.getJSONArray("images");
+                                String imageUrl = imageUrls.getString(0);
                                 HotNewsModel news = new HotNewsModel();
                                 news.setTitle(title);
-                                news.setDate("20161207");
-                                news.setImages("0000");
+                                news.setDate(DATE_TODAY);
+                                news.setImages(imageUrl);
                                 newsArray.add(0, news);
 
                             } catch (JSONException e){

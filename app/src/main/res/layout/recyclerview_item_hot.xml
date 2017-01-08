@@ -10,54 +10,52 @@
         android:layout_alignParentStart="true"
         android:layout_height="120dp"
         app:cardCornerRadius="@dimen/cardview_radius"
-        android:layout_marginLeft="@dimen/cardview_margin"
-        android:layout_marginRight="@dimen/cardview_margin"
         android:clickable="true"
         android:background="?attr/selectableItemBackground"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
-        android:layout_marginBottom="@dimen/cardview_margin_top"
-        android:layout_marginTop="@dimen/cardview_margin_top"
-        android:id="@+id/hot_recyclerview_cardview">
+        android:id="@+id/hot_recyclerview_cardview"
+        android:layout_margin="@dimen/cardview_padding">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                app:srcCompat="@mipmap/portrait2"
+                android:id="@+id/news_image"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="150dp" />
+
             <TextView
                 android:text="TextView"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginLeft="23dp"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="36dp"
                 android:id="@+id/tv_title"
+                android:layout_width="150dp"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_width="150dp" />
-
-            <ImageView
-                app:srcCompat="@mipmap/portrait2"
-                android:layout_marginRight="19dp"
-                android:layout_marginEnd="19dp"
-                android:id="@+id/news_image"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/tv_title"
-                android:layout_width="120dp"
-                android:layout_height="80dp"
-                android:scaleType="centerCrop" />
+                android:textStyle="normal|bold" />
 
             <TextView
                 android:text="TextView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/tv_date"
                 android:fontFamily="sans-serif"
-                android:textSize="10sp"
-                android:layout_alignBottom="@+id/news_image"
+                android:textSize="12sp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_alignLeft="@+id/tv_title"
-                android:layout_alignStart="@+id/tv_title" />
+                android:layout_alignStart="@+id/tv_title"
+                android:layout_marginBottom="13dp" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </FrameLayout>

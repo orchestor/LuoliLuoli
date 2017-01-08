@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.ouman.luoliluoli.NewsDetailActivity;
 import com.ouman.luoliluoli.R;
 import com.ouman.luoliluoli.models.HotNewsModel;
@@ -48,6 +49,11 @@ public class HotRecyclerViewAdapter extends RecyclerView.Adapter<HotRecyclerView
         String title = data.get(position).getTitle();
         String imageUrl = data.get(position).getImages();
         String date = data.get(position).getDate();
+
+        System.out.println(imageUrl);
+        Glide.with(holder.news_image.getContext())
+                .load(imageUrl)
+                .into(holder.news_image);
 
         holder.tv_title.setText(title);
         holder.tv_date.setText(date);
