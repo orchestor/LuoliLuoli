@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
@@ -10,6 +11,9 @@
             android:id="@+id/nav_tech"
             android:icon="@drawable/ic_news"
             android:title="@string/nav_tech" />
+        <item android:title="@string/string_gallery"
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_camera" />
         <item
             android:id="@+id/nav_find"
             android:icon="@drawable/ic_search_black_24dp"

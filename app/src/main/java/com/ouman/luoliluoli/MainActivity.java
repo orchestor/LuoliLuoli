@@ -20,11 +20,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.ouman.luoliluoli.articlefragments.DailyFeedsFragment;
+import com.ouman.luoliluoli.galleryfragments.MeiziFragment;
+import com.ouman.luoliluoli.galleryfragments.UnsplashFragment;
+
 import io.github.yavski.fabspeeddial.FabSpeedDial;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, HotFragment.OnFragmentInteractionListener, ArticleFragment.OnFragmentInteractionListener ,
-SearchFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteractionListener{
+SearchFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteractionListener, DailyFeedsFragment.OnFragmentInteractionListener,
+        MeiziFragment.OnFragmentInteractionListener, UnsplashFragment.OnFragmentInteractionListener{
 
     FabSpeedDial mainFab;
     @Override
@@ -34,13 +39,15 @@ SearchFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteracti
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_news_detail);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Hot");
+        getSupportActionBar().setTitle("最热");
         getSupportActionBar().setElevation(6);
 
 
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.main_appbar_layout);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            appBarLayout.setElevation(8);
+        if (appBarLayout != null){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                appBarLayout.setElevation(8);
+            }
         }
 
         if (savedInstanceState == null) {
@@ -131,6 +138,10 @@ SearchFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteracti
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new ArticleFragment()).commit();
+        } else if (id == R.id.nav_gallery) {
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new GalleryFragment()).commit();
         } else if (id == R.id.nav_find) {
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

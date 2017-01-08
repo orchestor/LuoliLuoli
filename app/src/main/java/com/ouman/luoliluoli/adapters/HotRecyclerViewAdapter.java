@@ -32,7 +32,7 @@ public class HotRecyclerViewAdapter extends RecyclerView.Adapter<HotRecyclerView
     }
 
     public HotRecyclerViewAdapter.HotViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View view = LayoutInflater.from(context).inflate(R.layout.hot_recyclerview_item, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.recyclerview_item_hot, null);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override

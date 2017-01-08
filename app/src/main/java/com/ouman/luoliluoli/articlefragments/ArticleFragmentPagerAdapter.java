@@ -38,7 +38,7 @@ public class ArticleFragmentPagerAdapter extends FragmentPagerAdapter {
             case 3:
                 return SingleWordFragment.newInstance(position);
             default:
-                return null;
+                return DailyFeedsFragment.newInstance(0);
         }
 
     }

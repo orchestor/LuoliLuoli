@@ -9,9 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.ouman.luoliluoli.DailyFeedsDetailActivity;
 import com.ouman.luoliluoli.NewsDetailActivity;
 import com.ouman.luoliluoli.R;
+import com.ouman.luoliluoli.articlefragments.DailyFeedsFragment;
+import com.ouman.luoliluoli.models.DailyFeedsModel;
 import com.ouman.luoliluoli.models.HotNewsModel;
 
 import java.util.List;
@@ -23,30 +28,35 @@ import java.util.List;
 public class DailyFeedsRecycleViewAdapter extends RecyclerView.Adapter<DailyFeedsRecycleViewAdapter.DailyFeedsViewHolder>{
 
     private Context context;
-    private List<HotNewsModel> data;
-    public DailyFeedsRecycleViewAdapter(Context context, List<HotNewsModel> data){
+    private List<DailyFeedsModel> data;
+    public DailyFeedsRecycleViewAdapter(Context context, List<DailyFeedsModel> data){
         this.context = context;
         this.data = data;
     }
 
     public DailyFeedsRecycleViewAdapter.DailyFeedsViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View view = LayoutInflater.from(context).inflate(R.layout.hot_recyclerview_item, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.recycleview_item_article_tab1, null);
         return new DailyFeedsRecycleViewAdapter.DailyFeedsViewHolder(view);
     }
 
     public void onBindViewHolder(final DailyFeedsRecycleViewAdapter.DailyFeedsViewHolder holder, final int position){
         String title = data.get(position).getTitle();
-        String imageUrl = data.get(position).getImages();
-        String date = data.get(position).getDate();
+        String tag = data.get(position).getTag();
+        String image = data.get(position).getImage();
+        System.out.println("image--" + image);
+
+        Glide.with(holder.image.getContext())
+                .load("http://" + image)
+                .error(R.drawable.bk1)
+                .into(holder.image);
+
 
         holder.tv_title.setText(title);
-        holder.tv_date.setText(date);
-        holder.hotCardView.setOnClickListener(new View.OnClickListener() {
+        holder.tv_tag.setText(tag);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(view.getContext(), "inside viewholder position = " +
-//                        String.valueOf(position), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(view.getContext(), NewsDetailActivity.class);
+                Intent intent = new Intent(view.getContext(), DailyFeedsDetailActivity.class);
                 view.getContext().startActivity(intent);
 
             }
@@ -60,15 +70,15 @@ public class DailyFeedsRecycleViewAdapter extends RecyclerView.Adapter<DailyFeed
 
     public class DailyFeedsViewHolder extends RecyclerView.ViewHolder {
         TextView tv_title;
-        TextView tv_date;
-        ImageView news_image;
-        CardView hotCardView;
+        TextView tv_tag;
+        ImageView image;
+        CardView cardView;
         public DailyFeedsViewHolder(View view){
             super(view);
-            tv_title = (TextView) view.findViewById(R.id.tv_title);
-            tv_date = (TextView) view.findViewById(R.id.tv_date);
-            news_image = (ImageView) view.findViewById(R.id.news_image);
-            hotCardView = (CardView) view.findViewById(R.id.hot_recyclerview_cardview);
+            tv_title = (TextView) view.findViewById(R.id.article_tab1_recycle_item_title);
+            tv_tag = (TextView) view.findViewById(R.id.article_tab1_recycle_item_tag);
+            image = (ImageView) view.findViewById(R.id.article_tab1_recycle_item_image);
+            cardView = (CardView) view.findViewById(R.id.article_tab1_recycle_item_cardview);
         }
 
     }

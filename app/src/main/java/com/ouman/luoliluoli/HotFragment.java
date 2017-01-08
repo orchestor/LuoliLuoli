@@ -33,6 +33,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static android.support.v7.recyclerview.R.styleable.RecyclerView;
 import static android.widget.Toast.LENGTH_SHORT;
 
 public class HotFragment extends Fragment {
