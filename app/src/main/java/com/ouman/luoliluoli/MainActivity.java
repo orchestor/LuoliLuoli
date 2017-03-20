@@ -160,7 +160,6 @@ SearchFragment.OnFragmentInteractionListener, AroundFragment.OnFragmentInteracti
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         //在每次关闭drawer时都使得menu失效，目的是方便后面修改menuitem
-        invalidateOptionsMenu();
         drawer.closeDrawer(GravityCompat.START);
         return true;
 
